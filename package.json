@@ -1,6 +1,6 @@
 {
   "name": "config-doc",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Create and manage config documents",
   "main": "index.js",
   "scripts": {
