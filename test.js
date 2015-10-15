@@ -12,6 +12,12 @@ test('initialization', function (t) {
   t.equal(doc.get('yo'), 'lo');
 });
 
+test('expanding the home directory', function (t) {
+  var doc = Doc('~/.yoo');
+  t.plan(1);
+  t.equal(doc.filename, process.env.HOME + '/.yoo');
+});
+
 test('saving', function (t) {
   t.plan(4);
 

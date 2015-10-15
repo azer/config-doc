@@ -4,6 +4,7 @@ var write = require("write-json").sync;
 var debug = require("local-debug");
 var call = require("try-call");
 var debounce = require("debounce-fn");
+var expandHomeDir = require("expand-home-dir");
 
 var Config = struct({
   get: get,
@@ -18,7 +19,7 @@ module.exports = NewConfig;
 
 function NewConfig (filename) {
   var c = Config({
-    filename: filename,
+    filename: expandHomeDir(filename),
     logger: debug(filename),
     writer: debounce(write)
   });
